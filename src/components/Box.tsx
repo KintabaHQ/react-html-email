@@ -19,6 +19,7 @@ export default function Box({
   align = "left",
   valign = "top",
   children,
+  style,
   ...props
 }: Props) {
   return (
@@ -27,9 +28,12 @@ export default function Box({
       cellPadding={cellPadding}
       cellSpacing={cellSpacing}
       style={{
+        ...style,
         border: `${border}px solid black`,
         textAlign: align,
         verticalAlign: valign,
+        marginLeft: "auto",
+        marginRight: "auto",
       }}
     >
       <tbody>{children}</tbody>
