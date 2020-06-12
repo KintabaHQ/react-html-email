@@ -13,38 +13,41 @@
     "email": "c@chromakode.com"
   },
   "scripts": {
-    "lint": "eslint --ext .jsx --ext .js .",
+    "lint": "eslint src",
+    "format": "prettier src/**/*.{ts,tsx} **/*.json __tests__/*.tsx --write",
     "test": "jest",
     "test:cov": "jest --coverage",
-    "compile": "babel -d lib/ src/ && cp -v src/supportMatrix.json lib/",
-    "scrape": "babel-node scripts/scrapeStyleSupport.js > src/supportMatrix.json",
-    "prepare": "npm run compile"
+    "build": "tsc && cp -v src/supportMatrix.json dist/",
+    "prepare": "npm run build"
   },
-  "main": "lib/index.js",
-  "repository": "chromakode/react-html-email",
+  "main": "dist/index.js",
+  "repository": "sirensoftitan/react-html-email",
   "devDependencies": {
-    "babel-cli": "~6.26.0",
-    "babel-eslint": "~8.0.0",
-    "babel-jest": "^21.0.2",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.6.0",
-    "babel-preset-react": "^6.24.1",
-    "cheerio": "~1.0.0-rc.2",
-    "eslint": "~4.7.2",
-    "eslint-config-airbnb": "~15.1.0",
-    "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-jsx-a11y": "^5.1.1",
-    "eslint-plugin-react": "^7.4.0",
-    "jest": "^21.1.0",
-    "node-fetch": "~1.7.3",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+    "@types/cheerio": "^0.22.18",
+    "@types/jest": "^26.0.0",
+    "@types/node": "^14.0.13",
+    "@types/node-fetch": "^2.5.7",
+    "@types/react": "^16.9.36",
+    "@types/react-dom": "^16.9.8",
+    "@typescript-eslint/eslint-plugin": "^3.2.0",
+    "@typescript-eslint/parser": "^3.2.0",
+    "cheerio": "~1.0.0-rc.3",
+    "eslint": "~7.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.20.0",
+    "jest": "^26.0.1",
+    "node-fetch": "~2.6.0",
+    "prettier": "^2.0.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "ts-jest": "^26.1.0",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.5"
   },
   "peerDependencies": {
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0"
-  },
-  "dependencies": {
-    "prop-types": "^15.5.10"
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   }
 }
