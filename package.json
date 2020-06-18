@@ -1,7 +1,7 @@
 {
-  "name": "react-html-email",
+  "name": "@kintaba/react-html-email",
   "description": "Create elegant HTML email templates using React.",
-  "version": "3.0.0",
+  "version": "1.0.0",
   "keywords": [
     "react",
     "html",
@@ -21,7 +21,7 @@
     "prepare": "npm run build"
   },
   "main": "dist/index.js",
-  "repository": "sirensoftitan/react-html-email",
+  "repository": "vaultio/react-html-email",
   "devDependencies": {
     "@types/cheerio": "^0.22.18",
     "@types/jest": "^26.0.0",
